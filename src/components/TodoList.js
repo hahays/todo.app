@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import TodoListItem from "./TodoListItem";
-import { DataContext } from "./DataProvider";
+import { TodoContext } from "./DataProvider";
 
 export default function TodoList() {
-  const [todos, setTodos] = useContext(DataContext);
+  const [todos, setTodos] = useContext(TodoContext);
 
   const switchComplete = (id) => {
     const newTodos = [...todos];

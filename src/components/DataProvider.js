@@ -1,6 +1,6 @@
 import React, { useState, useEffect, createContext } from "react";
 
-export const DataContext = createContext();
+export const TodoContext = createContext();
 
 export const DataProvider = (props) => {
   const [todos, setTodos] = useState([]);
@@ -15,8 +15,8 @@ export const DataProvider = (props) => {
   }, [todos]);
 
   return (
-    <DataContext.Provider value={[todos, setTodos]}>
+    <TodoContext.Provider value={[todos, setTodos]}>
       {props.children}
-    </DataContext.Provider>
+    </TodoContext.Provider>
   );
 };

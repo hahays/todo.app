@@ -1,9 +1,9 @@
 import React, { useContext, useState } from "react";
-import { DataContext } from "./DataProvider";
+import { TodoContext } from "./DataProvider";
 
 export default function Footer() {
   const [checkAll, setCheckAll] = useState(false);
-  const [todos, setTodos] = useContext(DataContext);
+  const [todos, setTodos] = useContext(TodoContext);
 
   const roma = "( -    ____    - )";
 
