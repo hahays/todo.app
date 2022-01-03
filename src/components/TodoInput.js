@@ -1,8 +1,8 @@
 import React, { useState, useContext } from "react";
-import { TodoContext } from "./DataProvider";
+import { TodoContext } from "./TodoContextProvider";
 
-export default function FormInput() {
-  const [todos, setTodos] = useContext(TodoContext);
+export default function TodoForm() {
+  const { todos, setTodos } = useContext(TodoContext);
   const [todoName, setTodoName] = useState("");
   const addTodo = (e) => {
     e.preventDefault();
@@ -16,7 +16,7 @@ export default function FormInput() {
         name="todos"
         id="todos"
         required
-        placeholder="Vadim, what need to be done?"
+        placeholder="What need to be done?"
         value={todoName}
         onChange={(e) => setTodoName(e.target.value)}
       />

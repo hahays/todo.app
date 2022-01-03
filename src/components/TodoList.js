@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import TodoListItem from "./TodoListItem";
-import { TodoContext } from "./DataProvider";
+import { TodoContext } from "./TodoContextProvider";
 
 export default function TodoList() {
-  const [todos, setTodos] = useContext(TodoContext);
+  const { todos, setTodos } = useContext(TodoContext);
 
   const switchComplete = (id) => {
     const newTodos = [...todos];
@@ -32,7 +32,7 @@ export default function TodoList() {
           todo={todo}
           key={index}
           id={index}
-          checkComplete={switchComplete}
+          switchComplete={switchComplete}
           handleEditTodos={handleEditTodos}
         />
       ))}

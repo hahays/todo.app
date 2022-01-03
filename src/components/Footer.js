@@ -1,28 +1,18 @@
-import React, { useContext, useState } from "react";
-import { TodoContext } from "./DataProvider";
+import React, { useContext } from "react";
+import { TodoContext } from "./TodoContextProvider";
 
 export default function Footer() {
-  const [checkAll, setCheckAll] = useState(false);
-  const [todos, setTodos] = useContext(TodoContext);
+  const { todos, setTodos, deleteTodo, allCheck, setAllCheck } =
+    useContext(TodoContext);
 
   const roma = "( -    ____    - )";
-
   const handleCheckAll = () => {
     const newTodos = [...todos];
     newTodos.forEach((todo) => {
-      todo.complete = !checkAll;
+      todo.complete = !allCheck;
     });
     setTodos(newTodos);
-    setCheckAll(!checkAll);
-  };
-
-  const deleteTodo = () => {
-    const newTodos = todos.filter((todo) => {
-      return todo.complete === false;
-    });
-
-    setTodos(newTodos);
-    setCheckAll(false);
+    setAllCheck(!allCheck);
   };
 
   return (
@@ -37,7 +27,7 @@ export default function Footer() {
               name="all"
               id="all"
               onClick={handleCheckAll}
-              checked={checkAll}
+              checked={todos.every((todo) => todo.complete)}
             />
             All
           </label>

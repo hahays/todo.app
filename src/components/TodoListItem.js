@@ -3,36 +3,36 @@ import React, { useState } from "react";
 export default function TodoListItem({
   todo,
   id,
-  checkComplete,
+  switchComplete,
   handleEditTodos,
 }) {
-  const [onEdit, setOnEdit] = useState(false);
-  const [editValue, setEditValue] = useState(todo.name);
+  const [editActive, setEditActive] = useState(false);
+  const [editableValue, setEditableValue] = useState(todo.name);
 
   const handleOnEdit = () => {
-    setOnEdit(true);
+    setEditActive(true);
   };
 
-  const handleSave = (id) => {
-    setOnEdit(false);
-    if (editValue) {
-      handleEditTodos(editValue, id);
+  const handleSave = () => {
+    setEditActive(false);
+    if (editableValue) {
+      handleEditTodos(editableValue, id);
     } else {
-      setEditValue(todo.name);
+      setEditableValue(todo.name);
     }
   };
 
-  if (onEdit) {
+  if (editActive) {
     return (
       <li>
         <input
           type="text"
           id="editValue"
-          value={editValue}
+          value={editableValue}
           name="editValue"
-          onChange={(e) => setEditValue(e.target.value)}
+          onChange={(e) => setEditableValue(e.target.value)}
         />
-        <button onClick={() => handleSave(id)}> Save</button>
+        <button onClick={handleSave}> Save</button>
       </li>
     );
   } else {
@@ -43,13 +43,11 @@ export default function TodoListItem({
             type="checkbox"
             id={id}
             checked={todo.complete}
-            onChange={() => checkComplete(id)}
+            onChange={() => switchComplete(id)}
           />
           {todo.name}
         </label>
-        <button disabled={todo.complete} onClick={handleOnEdit}>
-          Edit
-        </button>
+        <button onClick={handleOnEdit}>Edit</button>
       </li>
     );
   }

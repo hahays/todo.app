@@ -1,19 +1,19 @@
 import React from "react";
-import FormInput from "./components/FormInput";
+import TodoInput from "./components/TodoInput";
 import TodoList from "./components/TodoList";
 import Footer from "./components/Footer";
-import { DataProvider } from "./components/DataProvider";
+import { TodoContextProvider } from "./components/TodoContextProvider";
 
 function App() {
   return (
-    <DataProvider>
+    <TodoContextProvider>
       <div className="App">
         <h1>To do app </h1>
-        <FormInput />
+        <TodoInput />
         <TodoList />
         <Footer />
       </div>
-    </DataProvider>
+    </TodoContextProvider>
   );
 }
 
