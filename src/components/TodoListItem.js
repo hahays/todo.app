@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-
+import { CgCloseO } from "react-icons/cg";
 export default function TodoListItem({
   todo,
   id,
   switchComplete,
   handleEditTodos,
+  deleteTodo,
 }) {
   const [editActive, setEditActive] = useState(false);
   const [editableValue, setEditableValue] = useState(todo.name);
@@ -47,6 +48,9 @@ export default function TodoListItem({
           />
           {todo.name}
         </label>
+        <div className="icons">
+          <CgCloseO onClick={() => deleteTodo(id)} className="delete-icon" />
+        </div>
         <button onClick={handleOnEdit}>Edit</button>
       </li>
     );

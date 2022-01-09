@@ -6,7 +6,10 @@ export default function TodoForm() {
   const [todoName, setTodoName] = useState("");
   const addTodo = (e) => {
     e.preventDefault();
-    setTodos([...todos, { name: todoName, complete: false }]);
+    const todoIndex = todos.length
+      ? todos[todos.length - 1].id + 1
+      : todos.length;
+    setTodos([...todos, { id: todoIndex, name: todoName, complete: false }]);
     setTodoName("");
   };
   return (

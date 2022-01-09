@@ -15,7 +15,7 @@ code{
 }
 .App{
   text-align: center;
-  max-width: 500px;
+  max-width: 1000px;
   width: 100%;
   min-height: 400px;
   box-shadow: 0 2px 6px rgb(130, 194, 136);
@@ -57,6 +57,7 @@ form button{
   cursor: pointer;
 }
 ul li{
+  min-width: 300px;
   list-style: none;
   border: 1px solid rgb(185, 182, 182);
   margin: 10px 0;
@@ -105,4 +106,10 @@ label{
   .App{
     padding: 10px;
   }
+}
+.todoTable{
+  display: flex;
+  justify-content: space-evenly;
+  
+  
 }

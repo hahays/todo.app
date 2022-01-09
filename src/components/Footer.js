@@ -2,17 +2,17 @@ import React, { useContext } from "react";
 import { TodoContext } from "./TodoContextProvider";
 
 export default function Footer() {
-  const { todos, setTodos, deleteTodo, allCheck, setAllCheck } =
-    useContext(TodoContext);
+  const { todos, setTodos, deleteAllTodo } = useContext(TodoContext);
 
   const roma = "( -    ____    - )";
+  const allChecked = todos.every((todo) => todo.complete);
   const handleCheckAll = () => {
     const newTodos = [...todos];
+
     newTodos.forEach((todo) => {
-      todo.complete = !allCheck;
+      todo.complete = !allChecked;
     });
     setTodos(newTodos);
-    setAllCheck(!allCheck);
   };
 
   return (
@@ -27,11 +27,11 @@ export default function Footer() {
               name="all"
               id="all"
               onClick={handleCheckAll}
-              checked={todos.every((todo) => todo.complete)}
+              checked={allChecked}
             />
             All
           </label>
-          <button id="delete" onClick={deleteTodo}>
+          <button id="delete" onClick={deleteAllTodo}>
             Delete
           </button>
         </div>

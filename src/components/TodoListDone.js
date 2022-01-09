@@ -8,14 +8,14 @@ export default function TodoList() {
 
   const filter = (arr) => {
     const newArr = [...arr];
-    return newArr.filter((todo) => !todo.complete);
+    return newArr.filter((todo) => todo.complete);
   };
 
   const visibleItems = filter(todos);
 
   return (
     <ul>
-      <h1>Active</h1>
+      <h1>Done</h1>
       {visibleItems.map((todo) => (
         <TodoListItem
           todo={todo}
