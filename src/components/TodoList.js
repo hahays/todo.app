@@ -6,26 +6,37 @@ export default function TodoList() {
   const { todos, deleteTodo, switchComplete, handleEditTodos } =
     useContext(TodoContext);
 
-  const filter = (arr) => {
-    const newArr = [...arr];
-    return newArr.filter((todo) => !todo.complete);
-  };
-
-  const visibleItems = filter(todos);
+  const showDoneTodos = todos.filter((todo) => todo.complete);
+  const showActiveTodos = todos.filter((todo) => !todo.complete);
 
   return (
-    <ul>
-      <h1>Active</h1>
-      {visibleItems.map((todo) => (
-        <TodoListItem
-          todo={todo}
-          key={todo.id}
-          id={todo.id}
-          switchComplete={switchComplete}
-          handleEditTodos={handleEditTodos}
-          deleteTodo={deleteTodo}
-        />
-      ))}
-    </ul>
+    <div className="todoTable">
+      <ul>
+        <h1>Active</h1>
+        {showActiveTodos.map((todo) => (
+          <TodoListItem
+            todo={todo}
+            key={todo.id}
+            id={todo.id}
+            switchComplete={switchComplete}
+            handleEditTodos={handleEditTodos}
+            deleteTodo={deleteTodo}
+          />
+        ))}
+      </ul>
+      <ul>
+        <h1>Done</h1>
+        {showDoneTodos.map((todo) => (
+          <TodoListItem
+            todo={todo}
+            key={todo.id}
+            id={todo.id}
+            switchComplete={switchComplete}
+            handleEditTodos={handleEditTodos}
+            deleteTodo={deleteTodo}
+          />
+        ))}
+      </ul>
+    </div>
   );
 }

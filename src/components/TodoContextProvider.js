@@ -5,21 +5,18 @@ export const TodoContext = createContext();
 export const TodoContextProvider = (props) => {
   const [todos, setTodos] = useState([]);
 
-  const [doneTodos, setDoneTodos] = useState([]);
-
   const deleteTodo = (id) => {
     const deleteArr = [...todos].filter((todo) => todo.id !== id);
 
     setTodos(deleteArr);
   };
 
-  const deleteAllTodo = () => {
+  const deleteCompletedTodo = () => {
     const newTodos = todos.filter((todo) => {
       return todo.complete === false;
     });
 
     setTodos(newTodos);
-    // setAllCheck(false);
   };
 
   const handleEditTodos = (editvalue, id) => {
@@ -56,10 +53,8 @@ export const TodoContextProvider = (props) => {
       value={{
         todos,
         setTodos,
-        deleteAllTodo,
+        deleteCompletedTodo,
         deleteTodo,
-        doneTodos,
-        setDoneTodos,
         handleEditTodos,
         switchComplete,
       }}
