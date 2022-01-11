@@ -29,10 +29,10 @@ export default function Footer() {
               onClick={handleCheckAll}
               checked={allChecked}
             />
-            All
+            ALL
           </label>
           <button id="delete" onClick={deleteCompletedTodo}>
-            Delete
+            DELETE
           </button>
         </div>
       )}

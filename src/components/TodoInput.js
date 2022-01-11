@@ -15,6 +15,7 @@ export default function TodoForm() {
   return (
     <form autoComplete="off" onSubmit={addTodo}>
       <input
+        className="input"
         type="text"
         name="todos"
         id="todos"

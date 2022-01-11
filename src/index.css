@@ -1,4 +1,5 @@
 *{
+  background-color: gainsboro;
   padding: 0;
   box-sizing: border-box;
   font-weight: 600;
@@ -18,11 +19,12 @@ code{
   max-width: 1000px;
   width: 100%;
   min-height: 400px;
-  box-shadow: 0 2px 6px rgb(130, 194, 136);
+  background:rgb(240, 240, 240);
   margin: 50px;
   padding: 50px;
+  box-shadow: 0 1px 6px rgb(30, 37, 30);
+  border: 1px solid rgb(185, 182, 182);
 }
-
 #root{
   display: flex;
   align-items: center;
@@ -33,28 +35,52 @@ h1{
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 1000;
-  color: rgb(168, 158, 158)
+  color: rgb(56, 56, 56);
+  text-shadow: 0 1px 6px rgb(81, 146, 81);
+  box-shadow: 0 1px 6px rgb(30, 37, 30);
+  background:rgb(119, 211, 111);
+  border: 1px solid rgb(185, 182, 182);
+}
+h2{
+  width: 300px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 35px;
+  font-weight: 700;
+  color: rgb(56, 56, 56);
+  text-shadow: 0 1px 6px rgb(81, 146, 81);
+  box-shadow: 0 1px 6px rgb(30, 37, 30);
+  background:rgb(119, 211, 111);
+  border: 1px solid rgb(185, 182, 182);
 }
 form{
   width: 100%;
   height: 40px;
   margin: 20px 0;
   display: flex;
+  background:rgb(119, 211, 111);
 }
 form input,
 form button{
-  flex: 3;
+  flex: 4;
   border: none;
   outline: none;
-  border-bottom: 1px solid rgb(137, 216, 117);
-  margin: 0 5px;
+  box-shadow: 0 1px 6px rgb(30, 37, 30);
+  text-shadow: 0 1px 6px rgb(81, 146, 81);
+  border: 1px solid rgb(185, 182, 182);
+  background:rgb(119, 211, 111);
 }
 form button{
   flex: 1;
-  background: rgb(183, 218, 118);
-  color: white;
   letter-spacing: 2px;
   cursor: pointer;
+  text-shadow: 0 1px 6px rgb(81, 146, 81);
+  background: rgb(231, 78, 236);
+  color: black;
+  box-shadow: 0 1px 6px rgb(30, 37, 30);
+  text-transform: uppercase;
+  border: 1px solid rgb(185, 182, 182);
 }
 ul li{
   min-width: 300px;
@@ -66,10 +92,13 @@ ul li{
   justify-content: space-between;
   align-items: center;
   text-transform: capitalize;
+  background:rgb(77, 206, 223);
+  box-shadow: 0 1px 6px rgb(30, 37, 30);
 }
 ul li .active{
   opacity: 0.5;
   text-decoration: line-through;
+  border: 1px solid rgb(185, 182, 182);
 }
 ul li input,
 .row input{
@@ -80,10 +109,12 @@ ul li button,
 .row button{
   border: none;
   outline: none;
-  color: white;
-  background: rgb(33, 111, 163);
+  color: black;
+  letter-spacing: 2px;
   padding: 5px 15px;
   cursor: pointer;
+  background: rgb(231, 78, 236);
+  box-shadow: 0 1px 6px rgb(30, 37, 30);
 }
 ul li button:disabled{
   opacity: 0.5;
@@ -94,14 +125,22 @@ ul li button:disabled{
   justify-content: space-between;
   align-items: center;
   margin-top: 20px;
+  background:rgb(119, 211, 111);
+  box-shadow: 0 1px 6px rgb(30, 37, 30);
+  border: 1px solid rgb(185, 182, 182);
 }
 .row #delete{
-  background: rgb(189, 51, 85);
+  background: rgb(231, 78, 236);
+  color: black;
+  box-shadow: 0 1px 6px rgb(30, 37, 30);
 }
 label{
   cursor: pointer;
+  background-color: rgb(77, 206, 223);
+  text-shadow: 0 1px 6px rgb(81, 146, 81);
+  border: 1px solid rgb(185, 182, 182);
+  background: transparent;
 }
-
 @media (max-width: 400px) {
   .App{
     padding: 10px;
@@ -110,6 +149,7 @@ label{
 .todoTable{
   display: flex;
   justify-content: space-evenly;
-  
-  
+  text-shadow: 0 1px 6px rgb(81, 146, 81);
+  box-shadow: 0 1px 6px rgb(30, 37, 30);
+  border: 1px solid rgb(185, 182, 182);
 }

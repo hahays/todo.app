@@ -12,7 +12,7 @@ export default function TodoList() {
   return (
     <div className="todoTable">
       <ul>
-        <h1>Active</h1>
+        <h2>Active</h2>
         {showActiveTodos.map((todo) => (
           <TodoListItem
             todo={todo}
@@ -25,7 +25,7 @@ export default function TodoList() {
         ))}
       </ul>
       <ul>
-        <h1>Done</h1>
+        <h2>Done</h2>
         {showDoneTodos.map((todo) => (
           <TodoListItem
             todo={todo}
