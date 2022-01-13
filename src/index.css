@@ -1,5 +1,5 @@
 *{
-  background-color: gainsboro;
+  background-color: #e5bfbf;
   padding: 0;
   box-sizing: border-box;
   font-weight: 600;
@@ -19,7 +19,7 @@ code{
   max-width: 1000px;
   width: 100%;
   min-height: 400px;
-  background:rgb(240, 240, 240);
+  background:rgb(215 208 208);
   margin: 50px;
   padding: 50px;
   box-shadow: 0 1px 6px rgb(30, 37, 30);
@@ -98,7 +98,6 @@ ul li{
 ul li .active{
   opacity: 0.5;
   text-decoration: line-through;
-  border: 1px solid rgb(185, 182, 182);
 }
 ul li input,
 .row input{
@@ -138,7 +137,6 @@ label{
   cursor: pointer;
   background-color: rgb(77, 206, 223);
   text-shadow: 0 1px 6px rgb(81, 146, 81);
-  border: 1px solid rgb(185, 182, 182);
   background: transparent;
 }
 @media (max-width: 400px) {
@@ -152,4 +150,21 @@ label{
   text-shadow: 0 1px 6px rgb(81, 146, 81);
   box-shadow: 0 1px 6px rgb(30, 37, 30);
   border: 1px solid rgb(185, 182, 182);
+}
+.icons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 24px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.delete-icon {
+  
+  margin-right: 10px;
+  background: transparent;
+}
+.congratz{
+  margin-top: 50px;
 }

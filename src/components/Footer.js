@@ -18,7 +18,7 @@ export default function Footer() {
   return (
     <>
       {todos.length === 0 ? (
-        <h1 className>Наконец-то ты фсе сделала {roma} </h1>
+        <h1 className="congratz">Наконец-то ты фсе сделала {roma} </h1>
       ) : (
         <div className="row">
           <label htmlFor="all">

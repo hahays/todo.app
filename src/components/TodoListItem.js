@@ -50,8 +50,8 @@ export default function TodoListItem({
         </label>
         <div className="icons">
           <CgCloseO onClick={() => deleteTodo(id)} className="delete-icon" />
+          <button onClick={handleOnEdit}>Edit</button>
         </div>
-        <button onClick={handleOnEdit}>Edit</button>
       </li>
     );
   }
