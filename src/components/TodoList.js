@@ -10,32 +10,36 @@ export default function TodoList() {
   const showActiveTodos = todos.filter((todo) => !todo.complete);
 
   return (
-    <div className="todoTable">
+    <div className="row">
       <ul>
-        <h2>Active</h2>
-        {showActiveTodos.map((todo) => (
-          <TodoListItem
-            todo={todo}
-            key={todo.id}
-            id={todo.id}
-            switchComplete={switchComplete}
-            handleEditTodos={handleEditTodos}
-            deleteTodo={deleteTodo}
-          />
-        ))}
+        <span className="badge secondary">Active</span>
+        <div className="todoList">
+          {showActiveTodos.map((todo) => (
+            <TodoListItem
+              todo={todo}
+              key={todo.id}
+              id={todo.id}
+              switchComplete={switchComplete}
+              handleEditTodos={handleEditTodos}
+              deleteTodo={deleteTodo}
+            />
+          ))}
+        </div>
       </ul>
       <ul>
-        <h2>Done</h2>
-        {showDoneTodos.map((todo) => (
-          <TodoListItem
-            todo={todo}
-            key={todo.id}
-            id={todo.id}
-            switchComplete={switchComplete}
-            handleEditTodos={handleEditTodos}
-            deleteTodo={deleteTodo}
-          />
-        ))}
+        <span className="badge success">Done</span>
+        <div className="todoList">
+          {showDoneTodos.map((todo) => (
+            <TodoListItem
+              todo={todo}
+              key={todo.id}
+              id={todo.id}
+              switchComplete={switchComplete}
+              handleEditTodos={handleEditTodos}
+              deleteTodo={deleteTodo}
+            />
+          ))}
+        </div>
       </ul>
     </div>
   );

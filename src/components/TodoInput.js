@@ -1,6 +1,14 @@
 import React, { useState, useContext } from "react";
 import { TodoContext } from "./TodoContextProvider";
 
+const randomColor = () => {
+  const arrColor = ["red", "blue", "green", "yellow"];
+
+  const randomNumber = Math.floor(Math.random() * 4);
+
+  return arrColor[randomNumber];
+};
+
 export default function TodoForm() {
   const { todos, setTodos } = useContext(TodoContext);
   const [todoName, setTodoName] = useState("");
@@ -9,13 +17,16 @@ export default function TodoForm() {
     const todoIndex = todos.length
       ? todos[todos.length - 1].id + 1
       : todos.length;
-    setTodos([...todos, { id: todoIndex, name: todoName, complete: false }]);
+    setTodos([
+      ...todos,
+      { id: todoIndex, name: todoName, complete: false, color: randomColor() },
+    ]);
     setTodoName("");
   };
   return (
-    <form autoComplete="off" onSubmit={addTodo}>
+    <form className="form-group" autoComplete="off" onSubmit={addTodo}>
       <input
-        className="input"
+        className="input-block"
         type="text"
         name="todos"
         id="todos"
@@ -24,7 +35,9 @@ export default function TodoForm() {
         value={todoName}
         onChange={(e) => setTodoName(e.target.value)}
       />
-      <button type="submit">Add</button>
+      <button className="buttonAdd" type="submit">
+        Add
+      </button>
     </form>
   );
 }

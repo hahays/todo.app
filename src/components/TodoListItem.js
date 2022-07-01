@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { CgCloseO } from "react-icons/cg";
 export default function TodoListItem({
   todo,
   id,
@@ -25,32 +24,61 @@ export default function TodoListItem({
 
   if (editActive) {
     return (
-      <li>
-        <input
-          type="text"
-          id="editValue"
-          value={editableValue}
-          name="editValue"
-          onChange={(e) => setEditableValue(e.target.value)}
-        />
-        <button onClick={handleSave}> Save</button>
+      <li
+        style={{ backgroundColor: todo.color }}
+        className="alert alert-warning"
+      >
+        <div className="todoContainer">
+          <input
+            className="inputTodo"
+            type="text"
+            id="editValue"
+            checked={todo.complete}
+            value={editableValue}
+            name="editValue"
+            onChange={(e) => setEditableValue(e.target.value)}
+          />
+          <button onClick={handleSave}> Save</button>
+        </div>
       </li>
     );
   } else {
     return (
-      <li>
-        <label htmlFor={id} className={todo.complete ? "active" : ""}>
-          <input
+      <li
+        style={{ backgroundColor: todo.color }}
+        className="alert alert-warning"
+      >
+        <div className="todoContainer">
+          <fieldset className="form-group">
+            <label htmlFor={id} className="paper-check">
+              <input
+                className="todoCheckbox"
+                type="checkbox"
+                name="paperChecks"
+                checked={todo.complete}
+                id={id}
+                value="option 1"
+                onChange={() => switchComplete(id)}
+              />
+              <span>{todo.name}</span>
+            </label>
+          </fieldset>
+          {/* <input
             type="checkbox"
-            id={id}
+            name="paperChecks"
             checked={todo.complete}
+            id={id}
             onChange={() => switchComplete(id)}
           />
-          {todo.name}
-        </label>
-        <div className="icons">
-          <CgCloseO onClick={() => deleteTodo(id)} className="delete-icon" />
-          <button onClick={handleOnEdit}>Edit</button>
+          <label htmlFor={id} className={todo.complete ? "active" : ""}>
+            {todo.name}
+          </label> */}
+          <div className="buttons">
+            <button className="btn-danger" onClick={() => deleteTodo(id)}>
+              DEL
+            </button>
+            <button onClick={handleOnEdit}>EDIT</button>
+          </div>
         </div>
       </li>
     );
