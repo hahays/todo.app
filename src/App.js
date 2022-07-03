@@ -1,19 +1,22 @@
 import React from "react";
-import FormInput from "./components/FormInput";
-import TodoList from "./components/TodoList";
-import Footer from "./components/Footer";
-import { DataProvider } from "./components/DataProvider";
+import TodoInput from "./components/TodoInput/TodoInput";
+import TodoLayout from "./components/TodoLayout/TodoLayout";
+import Footer from "./components/Footer/Footer";
+import { TodoContextProvider } from "./context/TodoContextProvider/TodoContextProvider";
+
+import "./App.css";
+import Header from "./components/Header/Header";
 
 function App() {
   return (
-    <DataProvider>
+    <TodoContextProvider>
       <div className="App">
-        <h1>To do app </h1>
-        <FormInput />
-        <TodoList />
+        <Header name="To do app" />
+        <TodoInput />
+        <TodoLayout />
         <Footer />
       </div>
-    </DataProvider>
+    </TodoContextProvider>
   );
 }
 

@@ -1,0 +1,24 @@
+.buttonDelete {
+  background-color: #e97878;
+  height: 76px;
+  width: 76px;
+  text-align: center;
+  padding: 0;
+}
+
+.modalButton {
+  height: 76px;
+  width: 76px;
+}
+
+.buttonDeleteWrapper {
+  height: 120px;
+}
+
+.alert-warning {
+  color: #41403e;
+  background-color: #41403e;
+  background-color: var(--warning-light);
+  border-color: #41403e;
+  border-color: black;
+}

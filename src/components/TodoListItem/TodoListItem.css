@@ -1,0 +1,22 @@
+.todoContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 80px;
+}
+
+.todoCheckbox {
+  border: 2px solid #41403e;
+  border-color: var(--primary);
+  content: "";
+  display: inline-block;
+  height: 1rem;
+  margin-right: 0.75em;
+  position: relative;
+  vertical-align: -0.25em;
+  width: 1rem;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+}
