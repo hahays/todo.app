@@ -1,16 +1,11 @@
 import React, { useState, useContext } from "react";
-import { TodoContext } from "./TodoContextProvider";
+import MainButton from "../buttons/MainButton/MainButton";
+import { TodoContext } from "../../context/TodoContextProvider/TodoContextProvider";
 
-const randomColor = () => {
-  const arrColor = ["red", "blue", "green", "yellow"];
-
-  const randomNumber = Math.floor(Math.random() * 4);
-
-  return arrColor[randomNumber];
-};
+import "./TodoInput.css";
 
 export default function TodoForm() {
-  const { todos, setTodos } = useContext(TodoContext);
+  const { todos, setTodos, randomColor } = useContext(TodoContext);
   const [todoName, setTodoName] = useState("");
   const addTodo = (e) => {
     e.preventDefault();
@@ -26,18 +21,16 @@ export default function TodoForm() {
   return (
     <form className="form-group" autoComplete="off" onSubmit={addTodo}>
       <input
-        className="input-block"
+        className="input-block card"
         type="text"
         name="todos"
         id="todos"
         required
-        placeholder="What need to be done?"
+        placeholder="What needs to be done?"
         value={todoName}
         onChange={(e) => setTodoName(e.target.value)}
       />
-      <button className="buttonAdd" type="submit">
-        Add
-      </button>
+      <MainButton className="buttonAdd" type="submit" text="Add" />
     </form>
   );
 }

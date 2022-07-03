@@ -1,8 +1,12 @@
 import React, { useContext } from "react";
-import TodoListItem from "./TodoListItem";
-import { TodoContext } from "./TodoContextProvider";
+import TodoListItem from "../TodoListItem/TodoListItem";
+import { TodoContext } from "../../context/TodoContextProvider/TodoContextProvider";
+import BadgeCard from "../BadgeCard/BadgeCard";
+import TodoList from "../TodoList/TodoList";
 
-export default function TodoList() {
+import "./TodoLayout.css";
+
+export default function TodoLayout() {
   const { todos, deleteTodo, switchComplete, handleEditTodos } =
     useContext(TodoContext);
 
@@ -11,9 +15,9 @@ export default function TodoList() {
 
   return (
     <div className="row">
-      <ul>
-        <span className="badge secondary">Active</span>
-        <div className="todoList">
+      <div className="todoListContainer">
+        <BadgeCard className="secondary" text="Active" />
+        <TodoList className="Active">
           {showActiveTodos.map((todo) => (
             <TodoListItem
               todo={todo}
@@ -24,11 +28,11 @@ export default function TodoList() {
               deleteTodo={deleteTodo}
             />
           ))}
-        </div>
-      </ul>
-      <ul>
-        <span className="badge success">Done</span>
-        <div className="todoList">
+        </TodoList>
+      </div>
+      <div className="todoListContainer">
+        <BadgeCard className="success" text="Done" />
+        <TodoList className="Done">
           {showDoneTodos.map((todo) => (
             <TodoListItem
               todo={todo}
@@ -39,8 +43,8 @@ export default function TodoList() {
               deleteTodo={deleteTodo}
             />
           ))}
-        </div>
-      </ul>
+        </TodoList>
+      </div>
     </div>
   );
 }

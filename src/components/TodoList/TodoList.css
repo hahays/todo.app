@@ -1,0 +1,10 @@
+.todoList ul li:before {
+  content: none;
+}
+
+.todoCard {
+  padding-inline-start: 0px;
+  text-indent: -7px;
+  align-items: center;
+  justify-content: space-between;
+}

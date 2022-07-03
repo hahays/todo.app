@@ -1,18 +1,19 @@
 import React from "react";
-import TodoInput from "./components/TodoInput";
-import TodoList from "./components/TodoList";
-import Footer from "./components/Footer";
-import { TodoContextProvider } from "./components/TodoContextProvider";
+import TodoInput from "./components/TodoInput/TodoInput";
+import TodoLayout from "./components/TodoLayout/TodoLayout";
+import Footer from "./components/Footer/Footer";
+import { TodoContextProvider } from "./context/TodoContextProvider/TodoContextProvider";
 
 import "./App.css";
+import Header from "./components/Header/Header";
 
 function App() {
   return (
     <TodoContextProvider>
       <div className="App">
-        <h1 className="badge">To do app </h1>
+        <Header name="To do app" />
         <TodoInput />
-        <TodoList />
+        <TodoLayout />
         <Footer />
       </div>
     </TodoContextProvider>

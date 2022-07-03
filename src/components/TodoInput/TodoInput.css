@@ -1,0 +1,15 @@
+.form-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-group .input-block {
+  width: 93%;
+  border-color: #000000;
+}
+
+.form-group .paper-check span {
+  text-align: left;
+  width: 250px;
+  display: flex;
+}

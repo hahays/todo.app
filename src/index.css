@@ -1,15 +1,5 @@
-.App {
-  text-align: center;
-  max-height: 100vh;
-}
 #root {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-@media (max-width: 400px) {
-  .App {
-    padding: 10px;
-  }
 }

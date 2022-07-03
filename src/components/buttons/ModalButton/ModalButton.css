@@ -1,0 +1,11 @@
+.row.flex-spaces {
+  justify-content: center;
+}
+
+.paper-btn {
+  background-color: #dbb5e1;
+}
+
+.btn {
+  font-size: 15px;
+}

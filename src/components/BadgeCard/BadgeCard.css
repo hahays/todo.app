@@ -1,0 +1,16 @@
+.badge {
+  font-size: 4rem;
+  border-color: black;
+  background-color: #929599;
+  display: inline-block;
+}
+
+.badge.success {
+  background-color: #7bdb7f;
+  width: 500px;
+}
+
+.badge.secondary {
+  background-color: #abd6ff;
+  width: 500px;
+}

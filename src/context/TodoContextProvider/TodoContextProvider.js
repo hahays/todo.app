@@ -39,6 +39,14 @@ export const TodoContextProvider = (props) => {
     setTodos(newTodos);
   };
 
+  const randomColor = () => {
+    const arrColor = ["#FED6BC", "#DEF7FE", "#C3FBD8", "#E7ECFF"];
+
+    const randomNumber = Math.floor(Math.random() * 4);
+
+    return arrColor[randomNumber];
+  };
+
   useEffect(() => {
     const todoStore = JSON.parse(localStorage.getItem("todoStore"));
     if (todoStore) setTodos(todoStore);
@@ -57,6 +65,7 @@ export const TodoContextProvider = (props) => {
         deleteTodo,
         handleEditTodos,
         switchComplete,
+        randomColor,
       }}
     >
       {props.children}

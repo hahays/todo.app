@@ -1,0 +1,53 @@
+.todoListContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.todoListActive {
+  height: 305px;
+  overflow-y: scroll;
+  border-bottom-left-radius: 15px 255px;
+  border-top-left-radius: 255px 15px;
+  border: 2px solid #41403e;
+  border-color: var(--primary);
+  margin-bottom: 20px;
+  padding: 15px;
+  width: 100%;
+}
+
+.todoListDone {
+  height: 305px;
+  overflow-y: scroll;
+  border-bottom-left-radius: 22px 196px;
+  border-top-left-radius: 359px 13px;
+  border: 2px solid #41403e;
+  border-color: var(--primary);
+  margin-bottom: 20px;
+  padding: 15px;
+  width: 100%;
+}
+
+.todoListActive::-webkit-scrollbar {
+  width: 10px;
+}
+
+.todoListActive::-webkit-scrollbar-thumb {
+  background-color: #abd6ff;
+  outline: 1px solid rgb(30, 30, 31);
+  opacity: 1;
+}
+
+.todoListDone::-webkit-scrollbar {
+  width: 10px;
+}
+
+.todoListDone::-webkit-scrollbar-thumb {
+  background-color: #7bdb7f;
+  outline: 1px solid rgb(30, 30, 31);
+  opacity: 1;
+}
+
+.row {
+  justify-content: space-between;
+}
